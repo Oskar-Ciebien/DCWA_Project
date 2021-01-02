@@ -1,0 +1,38 @@
+<!-- CSS Style -->
+<style>
+    /* Adding Style to table, th and td */
+    table,
+    th,
+    td {
+        padding: 5px;
+        border: 1px solid black;
+    }
+</style>
+
+<!-- Page Heading -->
+<h1>Heads Of State</h1>
+
+<!-- Button to add a head of state -->
+<a href="/addHeadOfState" class="button">Add Head of State</a>
+
+<!-- Breaks -->
+</br></br>
+
+<!-- Table printing details from Mongo Database - headsOfState.json -->
+<table>
+    <!-- Table Row with Headings -->
+    <tr>
+        <th>Country Code</th>
+        <th>Head of State</th>
+    </tr>
+<% headsOfState.forEach((headOfState) => { %>
+    <!-- Table Row printing out the items from database -->
+    <tr>
+        <td><%= headOfState._id %></td>
+        <td><%= headOfState.headOfState %></td>
+    </tr>
+<% }) %>
+</table>
+
+<!-- Button redirecting to Home Page -->
+<a href="/">Home</a>

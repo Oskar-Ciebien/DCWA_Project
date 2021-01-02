@@ -1,0 +1,43 @@
+<!-- CSS Style -->
+<style>
+    /* Adding Style to table, th and td */
+    table,
+    th,
+    td {
+        padding: 5px;
+        border: 1px solid black;
+    }
+</style>
+
+<!-- Page Heading -->
+<h1>Countries</h1>
+
+<!-- Button to add a country -->
+<a href="/addCountry" class="button">Add Country</a>
+
+<!-- Breaks -->
+</br></br>
+
+<!-- Table printing details from MySQL Database - geography.sql -->
+<table>
+    <!-- Table Row with Headings -->
+    <tr>
+        <th>Code</th>
+        <th>Name</th>
+        <th>Details</th>
+        <th>Action</th>
+    </tr>
+<% countries.forEach((country) => { %>
+    <!-- Table Row printing out the items from database and additional buttons -->
+    <tr>
+        <td><%= country.co_code %></td>
+        <td><%= country.co_name %></td>
+        <td><%= country.co_details %></td>
+        <td><a href="/edit/<%= country.co_code %>">Update</a></td>
+        <td><a href="/delete/<%= country.co_code %>">Delete</a></td>
+    </tr>
+<% }) %>
+</table>
+
+<!-- Button redirecting to Home Page -->
+<a href="/">Home</a>

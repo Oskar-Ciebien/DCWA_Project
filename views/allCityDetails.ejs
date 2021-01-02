@@ -1,0 +1,47 @@
+<!-- Page Heading -->
+<h1>All City Details</h1>
+
+<!-- forEach to go through cities to find city -->
+<% cities.forEach((city) => { %>
+    <!-- Form to show the details of a city -->
+    <form action="/cityDetails/<%=city.cty_code%>" method="GET">
+        <!-- City Code -->
+        <label>City Code:</label>
+        <input type="text" name="cty_code" value="<%=city.cty_code%>">
+        <!-- Breaks -->
+        <br>
+        <!-- City Name -->
+        <label>City Name:</label>
+        <input type="text" name="cty_name" value="<%=city.cty_name%>">
+        <!-- Breaks -->
+        <br>
+        <!-- City Population -->
+        <label>City Population:</label>
+        <input type="text" name="population" value="<%=city.population%>">
+        <!-- Breaks -->
+        <br>
+        <!-- By the Sea -->
+        <label>By the Sea:</label>
+        <input type="text" name="isCoastal" value="<%=city.isCoastal%>">
+        <!-- Breaks -->
+        <br>
+        <!-- Area -->
+        <label>Area(KM):</label>
+        <input type="text" name="areaKM" value="<%=city.areaKM%>">
+        <!-- Breaks -->
+        <br><br>
+        <!-- Country Code -->
+        <label>Country Code:</label>
+        <input type="text" name="co_code" value="<%=city.co_code%>">
+        <!-- Breaks -->
+        <br>
+        <!-- Country Name -->
+        <label>Country Name:</label>
+        <input type="text" name="co_name" value="<%=city.co_name%>">
+        <!-- Breaks -->
+        <br>
+    </form>
+<% }) %>
+
+<!-- Button redirecting to Home Page -->
+<a href="/">Home</a>

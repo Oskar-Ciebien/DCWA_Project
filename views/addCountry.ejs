@@ -1,0 +1,34 @@
+<!-- Page Heading -->
+<h1>Add Country</h1>
+
+<!-- Printing out errors if any are found while filling out the form -->
+<% if (errors !=undefined) { %>
+<ul>
+    <% errors.forEach((error)=> { %>
+        <li>
+            <%= error.msg %>
+        </li>
+    <% }) %>
+</ul>
+<% } %>
+
+<!-- Form - Calling addCountry using POST -->
+<form action="/addCountry" method="POST">
+    <!-- Code -->
+    <label>Country Code:</label>
+    <br>
+    <input type="text" name="co_code">
+    <br>
+    <!-- Name -->
+    <label>Country Name:</label>
+    <br>
+    <input type="text" name="co_name">
+    <br>
+    <!-- Details -->
+    <label>Country Details:</label>
+    <br>
+    <textarea type="text" name="co_details" rows="4"></textarea>
+    <br><br>
+    <!-- Add Country - Submit button -->
+    <input type="submit" value="Add Country">
+</form>

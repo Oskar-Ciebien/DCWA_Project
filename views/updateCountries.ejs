@@ -1,0 +1,22 @@
+<!-- Page Heading -->
+<h1>Edit Country</h1>
+
+<!-- Form - Calling /edit with POST and updating the picked country -->
+<% countries.forEach((country) => { %>
+<form action="/edit" method="POST">
+  <!-- Code -->
+  <label>Country Code:</label>
+  <input type="text" name="co_code" value="<%= country.co_code %>">
+  <br>
+  <!-- Name -->
+  <label>Country Name:</label>
+  <input type="text" name="co_name" value="<%= country.co_name %>">
+  <br>
+  <!-- Details -->
+  <label>Country Details:</label>
+  <textarea type="text" name="co_details" rows="10" cols="30"><%= country.co_details %></textarea>
+  <br><br>
+  <!-- Update - Submit button -->
+  <input type="submit" value="Update">
+  <% }) %>
+</form>
